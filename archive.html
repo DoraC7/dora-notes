@@ -1,0 +1,21 @@
+---
+layout: page
+title: 所有筆記
+permalink: /archive/
+---
+{% if site.posts.size == 0 %}
+<p>還沒有公開的筆記。第一篇完成後就會出現在這裡。</p>
+{% else %}
+{% assign grouped_posts = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in grouped_posts %}
+<h2>{{ year.name }}</h2>
+<ul class="post-list">
+{% for post in year.items %}
+<li><span class="post-meta">{{ post.date | date: "%m-%d" }}</span>
+<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+{% if post.categories.size > 0 %}<small> · {{ post.categories | join: '／' | escape }}</small>{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endfor %}
+{% endif %}

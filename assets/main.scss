@@ -1,0 +1,21 @@
+---
+---
+$background-color: #faf8f4;
+$text-color: #292d29;
+$brand-color: #356650;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+$base-font-size: 18px;
+$base-line-height: 1.85;
+$content-width: 820px;
+@import "minima";
+.site-header { border-top: 4px solid #356650; }
+.site-title { font-size: 21px; letter-spacing: .02em; }
+.home > .page-heading { font-size: 32px; line-height: 1.5; margin-bottom: 24px; }
+.post-title { font-size: 34px; line-height: 1.5; }
+.post-content h2 { font-size: 25px; margin-top: 2em; }
+.post-content h3 { font-size: 21px; }
+a:focus-visible { outline: 3px solid #356650; outline-offset: 4px; }
+@media screen and (max-width: 600px) {
+  .site-title { font-size: 17px; }
+  .home > .page-heading, .post-title { font-size: 26px; }
+}
